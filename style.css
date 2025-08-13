@@ -1,0 +1,249 @@
+:root {
+  --Soft-red: hsl(10, 79%, 65%);
+  --Cyan: hsl(186, 34%, 60%);
+  --Dark-brown: hsl(25, 47%, 15%);
+  --Medium-brown: hsl(28, 10%, 53%);
+  --Cream: hsl(27, 66%, 92%);
+  --Very-pale-orange: hsl(33, 100%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --line: #f8e9dd;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  box-sizing: border-box;
+}
+
+/* Smooth scroll */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+* {
+  margin: 0;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--Cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 1rem;
+}
+
+.header {
+  background-color: var(--Soft-red);
+  border-radius: 1.25rem;
+  width: 100%;
+  max-width: 33.75rem;
+  padding-block-start: clamp(1.25rem, 2vw + 1rem, 1.6875rem);
+  padding-inline-end: clamp(1.5rem, 3vw + 1rem, 2.5rem);
+  padding-block-end: clamp(1.25rem, 2vw + 1rem, 1.6875rem);
+  padding-inline-start: clamp(1.25rem, 2.5vw + 1rem, 2rem);
+  margin-block-end: clamp(1rem, 2vw + 1rem, 1.5rem);
+}
+
+.header__balance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.balance__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+}
+
+.balance__text {
+  font-weight: 400;
+  font-size: clamp(0.9375rem, 2vw + 0.5rem, 1.125rem);
+  line-height: 1.25;
+  color: var(--white);
+}
+
+.balance__amount {
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw + 1rem, 2rem);
+  line-height: clamp(1.5, 2vw + 1, 2);
+  color: var(--white);
+}
+
+.header__logo {
+  height: 3rem;
+}
+
+.main {
+  background: var(--Very-pale-orange);
+  border-radius: 1.25rem;
+  width: 100%;
+  max-width: 33.75rem;
+  padding-block-start: clamp(1.5rem, 2vw + 1rem, 2rem);
+  padding-inline: clamp(1.25rem, 2.5vw + 1rem, 2.5rem);
+  padding-block-end: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+}
+
+.chart__title {
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw + 1rem, 2rem);
+  line-height: clamp(1.5, 2vw + 1, 2);
+  color: var(--Dark-brown);
+  margin-bottom: 3rem;
+}
+
+.chart__container {
+  width: 100%;
+  max-width: 28.75rem;
+  display: flex;
+  justify-content: center;
+}
+
+.main__summary {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: clamp(1.5rem, 2vw + 1rem, 2rem);
+}
+
+.main__summary::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.125rem;
+  background: var(--line);
+}
+
+.summary__total {
+  display: flex;
+  flex-direction: column;
+  margin-top: clamp(1.5rem, 2vw + 1rem, 2rem);
+}
+
+.total__text,
+.comparison__text {
+  font-weight: 400;
+  font-size: clamp(0.9375rem, 2vw + 0.5rem, 1.125rem);
+  line-height: 1.4375;
+  color: var(--Medium-brown);
+}
+
+.total__amount {
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3.5vw + 1rem, 3rem);
+  line-height: clamp(2.4375, 2vw + 1rem, 3.875);
+  color: var(--Dark-brown);
+}
+
+.summary__comparison {
+  align-self: flex-end;
+  padding-bottom: 1rem;
+}
+
+.comparison__percent {
+  font-weight: 700;
+  font-size: clamp(0.9375rem, 2vw + 0.5rem, 1.125rem);
+  line-height: 1.4375;
+  text-align: right;
+  color: var(--Dark-brown);
+}
+
+.comparison__text {
+  text-align: right;
+}

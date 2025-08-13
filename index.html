@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Track your expenses with this interactive spending chart component. See your balance, total spending for the month, and daily spending over the last 7 days. Designed for clarity and ease of use."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Frontend Mentor | Expenses chart component</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__balance">
+        <div class="balance__details">
+          <p class="balance__text">My balance</p>
+          <p class="balance__amount">$921.48</p>
+        </div>
+        <a href="#">
+          <img
+            class="header__logo"
+            src="./images/logo.svg"
+            alt="Company Logo"
+          />
+        </a>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="main__chart">
+        <h1 class="chart__title">Spending - Last 7 days</h1>
+        <div class="chart__container">
+          <canvas
+            id="expenses"
+            aria-label="Spending chart for last 7 days"
+          ></canvas>
+        </div>
+      </section>
+
+      <section class="main__summary">
+        <div class="summary__total">
+          <p class="total__text">Total this month</p>
+          <p class="total__amount">$<span id="totalAmount">0.00</span></p>
+        </div>
+        <div class="summary__comparison">
+          <p class="comparison__percent">+2.4%</p>
+          <p class="comparison__text">from last month</p>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="/main.js"></script>
+</html>
